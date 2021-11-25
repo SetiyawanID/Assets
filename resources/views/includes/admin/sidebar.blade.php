@@ -11,9 +11,7 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="{{ Request::is('admin') ? ' active' : '' }}"><a class="nav-link" href="{{ route('dashboard.index') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-
-            <li class="menu-header">Another Menu</li>
-            <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
+            <li class="{{ Request::is('admin/department*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('department.index') }}"><i class="fas fa-briefcase"></i> <span>Department</span></a></li>
         </ul>
     </aside>
 </div>

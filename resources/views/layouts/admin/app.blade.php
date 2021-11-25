@@ -6,6 +6,7 @@
   <title>@yield('title')</title>
 
   @include('includes.admin.style')
+  @stack('addon-style')
 </head>
 
 <body>
@@ -34,5 +35,6 @@
   </div>
 
   @include('includes.admin.script')
+  @stack('addon-script')
 </body>
 </html>
