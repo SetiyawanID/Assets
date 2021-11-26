@@ -1,17 +1,17 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Departments')
+@section('title', 'Locations')
 
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Departments</h1>
+    <h1>Locations</h1>
   </div>
   
   <div class="row">
       <div class="col-12 col-md-8 col-lg-8">
 
-          <a href="{{ route('department.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new department</a>
+          <a href="{{ route('location.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new location</a>
 
           @if (Session::has('success'))
           <div class="alert alert-success alert-dismissible show fade">
@@ -26,7 +26,7 @@
 
           <div class="card">
               <div class="card-header">
-                  <h4>Department Lists</h4>
+                  <h4>Location Lists</h4>
               </div>
               <div class="card-body p-0">
                 <table class="table" id="myTable">
@@ -39,17 +39,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($departments as $department)
+                        @forelse ($locations as $location)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $department->name }}</td>
-                                <td>{{ $department->description }}</td>
+                                <td>{{ $location->name }}</td>
+                                <td>{{ $location->description }}</td>
                                 <td>
-                                    <a href="{{ route('department.edit', $department) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <form action="{{ route('department.destroy', $department) }}" method="POST" class="d-inline">
+                                    <a href="{{ route('location.edit', $location) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="{{ route('location.destroy', $location) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure wanna delete {{ $department->name }} ?')">Delete</button>
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure wanna delete {{ $location->name }} ?')">Delete</button>
                                     </form>
                                 </td>
                             </tr>

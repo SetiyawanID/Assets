@@ -10,7 +10,7 @@
   
   <div class="row">
       <div class="col-12 col-md-6 col-lg-6">
-          <a href="{{ route('department.index') }}" class="btn btn-primary mb-4">Back</a>
+        <a href="{{ route('department.index') }}" class="btn btn-info mb-4"><i class="fas fa-chevron-circle-left"></i> Back</a>
           <div class="card">
               <div class="card-header">
                   <h4>Form Edit Department</h4>

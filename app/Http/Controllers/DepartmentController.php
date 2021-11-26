@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Department;
+use App\Http\Requests\DepartmentRequest;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -34,12 +35,9 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DepartmentRequest $request)
     {
-        $attr = $request->validate([
-            'name' => 'required|min:5|max:25',
-            'description' => 'required|min:5'
-        ]);
+        $attr = $request->validated();
 
         $department = Department::create($attr);
 
@@ -64,12 +62,9 @@ class DepartmentController extends Controller
      * @param  \App\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Department $department)
+    public function update(DepartmentRequest $request, Department $department)
     {
-        $attr = $request->validate([
-            'name' => 'required|min:5|max:25',
-            'description' => 'required|min:5'
-        ]);
+        $attr = $request->validated();
 
         $department->update($attr);
 
@@ -87,7 +82,7 @@ class DepartmentController extends Controller
         $old_name = $department->name;
         $department->delete();
 
-        return redirect()->route('department.index')->with('success', "Data <b>" . $old_name . "</b> berhasil di hapus");
+        return redirect()->route('department.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
 
     }
 }
