@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->get();
+        $users = User::orderBy('name', 'ASC')->get();
         return view('pages.admin.user.index', compact('users'));
     }
 
@@ -25,7 +26,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.user.create', [
+            'departments' => Department::get(),
+        ]);
     }
 
     /**
@@ -36,18 +39,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $attr = $request->validate([
+            'name' => 'required|min:5|max:50|string',
+            'password' => 'required|string|min:8',
+            'email' => 'required|string|email|max:255|unique:users',
+            'job_title' => 'required',
+            'department_id' => 'required',
+            'role' => 'required'
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
+        $attr['password'] = bcrypt($request->password);
+
+        $user = User::create($attr);
+
+        return redirect()->route('user.index')->with('success', "Data <b>" . $user->name . "</b> successfully added!");
     }
 
     /**
@@ -81,6 +86,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $old_name = $user->name;
+        $user->delete();
+
+        return redirect()->route('user.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
     }
 }

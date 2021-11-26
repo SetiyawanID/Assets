@@ -52,8 +52,8 @@
                                         <span class="badge badge-secondary">STAFF</span>
                                     @elseif ($user->role == "2")
                                         <span class="badge badge-dark">NON - STAFF IT</span>
-                                    @else
-                                    <span class="badge badge-danger">MANAJER IT</span>
+                                    @elseif ($user->role == "3")
+                                        <span class="badge badge-danger">MANAJER IT</span>
                                     @endif
                                 </td>
                                 <td>
