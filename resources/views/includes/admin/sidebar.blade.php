@@ -14,6 +14,7 @@
             <li class="{{ Request::is('admin/department*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('department.index') }}"><i class="fas fa-briefcase"></i> <span>Department</span></a></li>
             <li class="{{ Request::is('admin/location*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('location.index') }}"><i class="fas fa-location-arrow"></i> <span>Location</span></a></li>
             <li class="{{ Request::is('admin/brand*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('brand.index') }}"><i class="fas fa-copyright"></i> <span>Brand</span></a></li>
+            <li class="{{ Request::is('admin/type*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('type.index') }}"><i class="fas fa-bolt"></i> <span>Type Asset</span></a></li>
         </ul>
     </aside>
 </div>
