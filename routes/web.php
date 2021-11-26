@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,6 +13,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     Route::resource('brand', BrandController::class)->except('show');
     Route::resource('type', TypeController::class)->except('show');
     Route::resource('user', UserController::class)->except('show');
+    Route::resource('vendor', VendorController::class)->except('show');
 });
 
 Auth::routes(['register' => false]);

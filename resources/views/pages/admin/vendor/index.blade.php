@@ -1,17 +1,17 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Users')
+@section('title', 'Vendors')
 
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Users</h1>
+    <h1>Vendors</h1>
   </div>
   
   <div class="row">
       <div class="col-12 col-md-12 col-lg-12">
 
-          <a href="{{ route('user.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new user</a>
+          <a href="{{ route('vendor.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new vendor</a>
 
           @if (Session::has('success'))
           <div class="alert alert-success alert-dismissible show fade">
@@ -26,7 +26,7 @@
 
           <div class="card">
               <div class="card-header">
-                  <h4>User Lists</h4>
+                  <h4>Vendor Lists</h4>
               </div>
               <div class="card-body p-0">
                 <table class="table" id="myTable">
@@ -34,34 +34,26 @@
                         <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Job Title</th>
-                            <th>Department Name</th>
-                            <th>Role</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Address</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($users as $user)
+                        @forelse ($vendors as $vendor)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->job_title }}</td>
-                                <td>{{ $user->department->name }}</td>
+                                <td>{{ $vendor->name }}</td>
+                                <td>{{ $vendor->email }}</td>
+                                <td>{{ $vendor->phone_number }}</td>
+                                <td>{{ $vendor->address }}</td>
                                 <td>
-                                    @if($user->role == "1")
-                                        <span class="badge badge-secondary">STAFF</span>
-                                    @elseif ($user->role == "2")
-                                        <span class="badge badge-dark">NON - STAFF IT</span>
-                                    @elseif ($user->role == "3")
-                                        <span class="badge badge-danger">MANAJER IT</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    {{-- <a href="{{ route('user.edit', $user) }}" class="btn btn-warning btn-sm">Edit</a> --}}
-                                    <form action="{{ route('user.destroy', $user) }}" method="POST" class="d-inline">
+                                    <a href="{{ route('vendor.edit', $vendor) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="{{ route('vendor.destroy', $vendor) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure wanna delete {{ $user->name }} ?')">Delete</button>
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure wanna delete {{ $vendor->name }} ?')">Delete</button>
                                     </form>
                                 </td>
                             </tr>
