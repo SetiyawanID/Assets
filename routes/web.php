@@ -21,4 +21,5 @@ Route::prefix('admin')->group(function(){
     Route::get('/', 'DashboardController@__invoke')->name('dashboard.index');
     Route::resource('department', DepartmentController::class)->except('show');
     Route::resource('location',LocationController::class)->except('show');
+    Route::resource('brand', BrandController::class)->except('show');
 });
