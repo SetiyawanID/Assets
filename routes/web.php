@@ -14,8 +14,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     Route::resource('type', TypeController::class)->except('show');
     Route::resource('user', UserController::class)->except('show');
     Route::resource('vendor', VendorController::class)->except('show');
+    Route::resource('asset', AssetController::class);
 });
 
 Auth::routes(['register' => false]);
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     protected $fillable = ['name', 'description'];
+
+    public function assets()
+    {
+        return $this->hasMany(Asset::class);
+    }
 }
