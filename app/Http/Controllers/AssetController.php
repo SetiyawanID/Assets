@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Asset;
+use App\Brand;
+use App\Location;
+use App\Type;
+use App\User;
 use Illuminate\Http\Request;
 
 class AssetController extends Controller
@@ -25,7 +29,18 @@ class AssetController extends Controller
      */
     public function create()
     {
-        //
+        $brands = Brand::all();
+        $locations = Location::all();
+        $users = User::all();
+        $types = Type::all();
+
+        return view('pages.admin.asset.create', [
+            'brands' => $brands,
+            'locations' => $locations,
+            'users' => $users,
+            'types' => $types
+        ]);
+
     }
 
     /**

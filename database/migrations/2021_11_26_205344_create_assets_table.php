@@ -23,8 +23,8 @@ class CreateAssetsTable extends Migration
             $table->string('serial_number');
             $table->unsignedBigInteger('type_id');
             $table->integer('cost');
-            $table->timestamp('purchase_date');
-            $table->string('warranty');
+            $table->date('purchase_date');
+            $table->date('warranty');
             $table->text('description');
             $table->string('picture');
             $table->timestamps();
