@@ -26,7 +26,6 @@ class CreateAssetsTable extends Migration
             $table->date('purchase_date');
             $table->date('warranty');
             $table->text('description');
-            $table->string('picture');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

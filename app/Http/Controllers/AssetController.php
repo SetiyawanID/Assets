@@ -51,7 +51,24 @@ class AssetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attr = $request->validate([
+            'name' => 'required|min:5|max:50',
+            'user_id' => 'required',
+            'brand_id' => 'required',
+            'location_id' => 'required',
+            'serial_number' => 'required',
+            'type_id' => 'required',
+            'cost' => 'required',
+            'purchase_date' => 'required',
+            'warranty' => 'required',
+            'description' => 'required',
+        ]);
+
+        $attr['asset_tag'] = "AD1" . \Str::random(5);
+
+        $asset = Asset::create($attr);
+
+        return redirect()->route('asset.index')->with('success', "Data <b>" . $asset->name . "</b> successfully added!");
     }
 
     /**
@@ -62,7 +79,7 @@ class AssetController extends Controller
      */
     public function show(Asset $asset)
     {
-        //
+        return view('pages.admin.asset.show',compact('asset'));
     }
 
     /**
@@ -96,6 +113,9 @@ class AssetController extends Controller
      */
     public function destroy(Asset $asset)
     {
-        //
+        $old_name = $asset->name;
+        $asset->delete();
+
+        return redirect()->route('asset.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
     }
 }

@@ -18,7 +18,7 @@
                   <h4>Form New Asset</h4>
               </div>
               <div class="card-body">
-                  <form action="{{ route('asset.store') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('asset.store') }}" method="POST">
                       @csrf
 
                       <div class="form-group">
@@ -103,11 +103,6 @@
                           @error('description')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
-                      </div>
-
-                      <div class="form-group">
-                          <label>Picture</label>
-                          <input type="file" name="picture" id="picture" class="form-control-file">
                       </div>
 
                       <button type="submit" class="btn btn-success">Submit</button>

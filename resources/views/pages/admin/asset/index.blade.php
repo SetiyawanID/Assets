@@ -9,7 +9,7 @@
   </div>
   
   <div class="row">
-      <div class="col-12 col-md-8 col-lg-8">
+      <div class="col-12 col-md-12 col-lg-12">
 
           <a href="{{ route('asset.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new asset</a>
 
@@ -28,12 +28,12 @@
               <div class="card-header">
                   <h4>Asset Lists</h4>
               </div>
-              <div class="card-body p-0">
+              <div class="card-body">
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Picture</th>
+                            <th>QR Code</th>
                             <th>Asset Tag</th>
                             <th>Name</th>
                             <th>Type</th>
@@ -46,7 +46,11 @@
                         @forelse ($assets as $asset)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $asset->picture }}</td>
+                                <td>
+                                    <div class="visible-print text-center img-thumbnail">
+                                        {!! QrCode::size(75)->generate(route('asset.show', $asset)); !!}
+                                    </div>
+                                </td>
                                 <td>{{ $asset->asset_tag }}</td>
                                 <td>{{ $asset->name }}</td>
                                 <td>{{ $asset->typeAsset->name }}</td>
@@ -54,6 +58,7 @@
                                 <td>{{ $asset->user->name }}</td>
                                 <td>
                                     <a href="{{ route('asset.edit', $asset) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ route('asset.show', $asset) }}" class="btn btn-info btn-sm">Detail</a>
                                     <form action="{{ route('asset.destroy', $asset) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
