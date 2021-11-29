@@ -39,7 +39,7 @@
                     <tr>
                         <th class="bg-secondary">Cost</th>
                         
-                        <td>{{ $asset->cost }}</td>
+                        <td>@currency($asset->cost)</td>
                     </tr>
                     <tr>
                         <th class="bg-secondary">Location</th>
