@@ -1,0 +1,126 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Brand;
+use App\License;
+use App\User;
+use Illuminate\Http\Request;
+
+class LicenseController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $licenses = License::with(['user', 'brand'])->get();  
+        return view('pages.admin.license.index', compact('licenses'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $brands = Brand::all();
+        $users = User::all();
+
+        return view('pages.admin.license.create', [
+            'brands' => $brands,
+            'users' => $users,
+        ]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $attr = $request->validate([
+            'name' => 'required|min:5|max:50',
+            'user_id' => 'required',
+            'brand_id' => 'required',
+            'license_number' => 'required|min:16|max:36',
+            'purchase_date' => 'required',
+            'description' => 'required',
+        ]);
+
+        $license = License::create($attr);
+
+        return redirect()->route('license.index')->with('success', "Data <b>" . $license->name . "</b> successfully added!");
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\License  $license
+     * @return \Illuminate\Http\Response
+     */
+    public function show(License $license)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\License  $license
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(License $license)
+    {
+        $brands = Brand::all();
+        $users = User::all();
+
+        return view('pages.admin.license.edit', [
+            'brands' => $brands,
+            'users' => $users,
+            'license' => $license
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\License  $license
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, License $license)
+    {
+        $attr = $request->validate([
+            'name' => 'required|min:5|max:50',
+            'user_id' => 'required',
+            'brand_id' => 'required',
+            'license_number' => 'required|min:16|max:36',
+            'purchase_date' => 'required',
+            'description' => 'required',
+        ]);
+
+        $license->update($attr);
+
+        return redirect()->route('license.index')->with('success', "Data <b>" . $license->name . "</b> successfully added!");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\License  $license
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(License $license)
+    {
+        $old_name = $license->name;
+        $license->delete();
+
+        return redirect()->route('license.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+    }
+}

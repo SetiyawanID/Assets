@@ -15,6 +15,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     Route::resource('user', UserController::class)->except('show');
     Route::resource('vendor', VendorController::class)->except('show');
     Route::resource('asset', AssetController::class);
+    Route::resource('license', LicenseController::class)->except('show');
 });
 
 Auth::routes(['register' => false]);
