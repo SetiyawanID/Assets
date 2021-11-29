@@ -30,4 +30,9 @@ class Asset extends Model
     {
         return $this->belongsTo(Type::class, 'type_id');
     }
+
+    public function maintenances()
+    {
+        return $this->hasMany(Maintenance::class);
+    }
 }
