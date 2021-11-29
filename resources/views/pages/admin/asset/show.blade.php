@@ -11,10 +11,8 @@
   <div class="row">
       <div class="col-8 col-md-8 col-lg-8">
 
-          <a href="{{ route('asset.index') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-left"></i> Back</a>
-
+        <a href="{{ route('asset.index') }}" class="btn btn-info mb-4"><i class="fas fa-chevron-circle-left"></i> Back</a>
     
-
           <div class="card shadow-sm">
               <div class="card-body">
                   <table class="table">

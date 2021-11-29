@@ -90,7 +90,18 @@ class AssetController extends Controller
      */
     public function edit(Asset $asset)
     {
-        //
+        $brands = Brand::all();
+        $locations = Location::all();
+        $users = User::all();
+        $types = Type::all();
+
+        return view('pages.admin.asset.edit', [
+            'brands' => $brands,
+            'locations' => $locations,
+            'users' => $users,
+            'types' => $types,
+            'asset' => $asset,
+        ]);
     }
 
     /**
@@ -102,7 +113,24 @@ class AssetController extends Controller
      */
     public function update(Request $request, Asset $asset)
     {
-        //
+        $attr = $request->validate([
+            'name' => 'required|min:5|max:50',
+            'user_id' => 'required',
+            'brand_id' => 'required',
+            'location_id' => 'required',
+            'serial_number' => 'required',
+            'type_id' => 'required',
+            'cost' => 'required',
+            'purchase_date' => 'required',
+            'warranty' => 'required',
+            'description' => 'required',
+        ]);
+
+        $attr['asset_tag'] = "AD1" . \Str::random(5);
+
+        $asset->update($attr);
+
+        return redirect()->route('asset.index')->with('success', "Data <b>" . $asset->name . "</b> successfully updated!");
     }
 
     /**
