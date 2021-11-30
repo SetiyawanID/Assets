@@ -23,6 +23,7 @@
                 <li class="{{ Request::is('admin/maintenance*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('maintenance.index') }}"><i class="fas fa-wrench"></i> <span>Maintenance</span></a></li>
             @endif
             <li class="{{ Request::is('admin/my-asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('myasset.index', Auth::user()->id) }}"><i class="fas fa-box"></i> <span>My Asset</span></a></li>
+            <li class="{{ Request::is('admin/my-license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('mylicense.index', Auth::user()->id) }}"><i class="fas fa-id-badge"></i> <span>My License</span></a></li>
             
         </ul>
     </aside>

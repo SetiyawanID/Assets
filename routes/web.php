@@ -18,6 +18,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     Route::resource('license', LicenseController::class);
     Route::resource('maintenance', MaintenanceController::class);
     Route::get('my-asset/{id}', 'MyAssetController@__invoke')->name('myasset.index');
+    Route::get('my-license/{id}', 'MyLicenseController@__invoke')->name('mylicense.index');
 });
 
 Auth::routes(['register' => false]);
