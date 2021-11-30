@@ -19,6 +19,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     Route::resource('maintenance', MaintenanceController::class);
     Route::get('my-asset/{id}', 'MyAssetController@__invoke')->name('myasset.index');
     Route::get('my-license/{id}', 'MyLicenseController@__invoke')->name('mylicense.index');
+    
+    Route::prefix('transfer')->group(function(){
+        Route::get('/', 'TransferController@index')->name('transfer.index');
+    });
 });
 
 Auth::routes(['register' => false]);
