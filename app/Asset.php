@@ -35,4 +35,9 @@ class Asset extends Model
     {
         return $this->hasMany(Maintenance::class);
     }
+
+    public function transfers()
+    {
+        return $this->hasMany(Transfer::class);
+    }
 }

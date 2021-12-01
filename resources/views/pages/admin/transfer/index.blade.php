@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Types')
+@section('title', 'Transfer Assets Requests')
 
 @section('content')
 <section class="section">
@@ -11,7 +11,10 @@
   <div class="row">
       <div class="col-12 col-md-8 col-lg-8">
 
-          <a href="{{ route('type.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new request</a>
+          @if (!Auth::user()->role == "1")
+             <a href="{{ route('transfer.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new request</a>
+          @endif
+         
 
           @if (Session::has('success'))
           <div class="alert alert-success alert-dismissible show fade">
@@ -33,11 +36,48 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Action</th>
+                            <th>Asset Name</th>
+                            <th>User Destination</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            @if (Auth::user()->role == '1')
+                              <th>Action</th>
+                            @endif
+                            
                         </tr>
                     </thead>
+                    <tbody>
+                      @foreach ($transfers as $transfer)
+                        <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{{ $transfer->asset->name }}</td>
+                          <td>{{ $transfer->user->name }}</td>
+                          <td>{{ $transfer->reason }}</td>
+                          <td>
+                            @if ($transfer->status == "1")
+                              <span class="badge badge-warning">Pending</span>
+                            @else
+                              <span class="badge badge-success">Done</span>
+                            @endif
+                          </td>
+
+                            @if(Auth::user()->role == '1')
+                            <td>
+                              @if ($transfer->status == '1')
+                                  <a href="{{ route('transfer.status', $transfer) }}?status=2" class="btn btn-success btn-sm"><i class="fa fa-check"></i> Mark as Done</a>
+                              @endif
+                              <form action="{{ route('transfer.destroy', $transfer) }}" method="POST" class="d-inline">
+                                  @csrf
+                                  @method('delete')
+                                  <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure want delete this data?');">
+                                      <i class="fa fa-trash"></i> Delete Request
+                                  </button>
+                              </form>
+                          </td>
+                          @endif
+                        </tr>
+                      @endforeach
+                    </tbody>
                 </table>
               </div>
           </div>

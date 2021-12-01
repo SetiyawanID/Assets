@@ -2,10 +2,10 @@
     <aside id="sidebar-wrapper">
 
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="index.html">Asset Apps</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="index.html">AA</a>
         </div>
         
         <ul class="sidebar-menu">
@@ -21,11 +21,12 @@
                 <li class="{{ Request::is('admin/asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('asset.index') }}"><i class="fas fa-boxes"></i> <span>Assets</span></a></li>
                 <li class="{{ Request::is('admin/license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('license.index') }}"><i class="fas fa-id-badge"></i> <span>Licenses</span></a></li>
                 <li class="{{ Request::is('admin/maintenance*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('maintenance.index') }}"><i class="fas fa-wrench"></i> <span>Maintenance</span></a></li>
+                <li class="{{ Request::is('admin/transfer*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('transfer.index') }}"><i class="fas fa-id-badge"></i> <span>Asset Transfer Request</span></a></li>
+            @else
+                <li class="{{ Request::is('admin/my-asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('myasset.index', Auth::user()->id) }}"><i class="fas fa-box"></i> <span>My Asset</span></a></li>
+                <li class="{{ Request::is('admin/my-license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('mylicense.index', Auth::user()->id) }}"><i class="fas fa-id-badge"></i> <span>My License</span></a></li>
+                <li class="{{ Request::is('admin/transfer*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('transfer.index') }}"><i class="fas fa-id-badge"></i> <span>Asset Transfer Request</span></a></li>
             @endif
-            <li class="{{ Request::is('admin/my-asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('myasset.index', Auth::user()->id) }}"><i class="fas fa-box"></i> <span>My Asset</span></a></li>
-            <li class="{{ Request::is('admin/my-license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('mylicense.index', Auth::user()->id) }}"><i class="fas fa-id-badge"></i> <span>My License</span></a></li>
-            <li class="{{ Request::is('admin/transfer*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('transfer.index') }}"><i class="fas fa-id-badge"></i> <span>Asset Transfer Request</span></a></li>
-            
         </ul>
     </aside>
 </div>

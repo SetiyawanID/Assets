@@ -15,7 +15,14 @@ class CreateTransfersTable extends Migration
     {
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('asset_id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('reason', 50);
+            $table->integer('status')->default(1);
             $table->timestamps();
+
+            $table->foreign('asset_id')->references('id')->on('assets')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

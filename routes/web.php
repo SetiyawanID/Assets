@@ -22,6 +22,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     
     Route::prefix('transfer')->group(function(){
         Route::get('/', 'TransferController@index')->name('transfer.index');
+        Route::get('/create', 'TransferController@create')->name('transfer.create');
+        Route::post('/create', 'TransferController@store')->name('transfer.store');
+        Route::get('/{id}/set-status', 'TransferController@setStatus')->name('transfer.status');
+        Route::delete('/{transfer}', 'TransferController@destroy')->name('transfer.destroy');
     });
 });
 
