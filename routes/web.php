@@ -28,6 +28,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
         Route::delete('/{transfer}', 'TransferController@destroy')->name('transfer.destroy');
     });
 
+    Route::get('/download-request', 'DownloadController@downloadRequest')->name('download.request');
+
     Route::get('/change-password', 'PasswordController@edit')->name('user.password.edit');
     Route::patch('/change-password', 'PasswordController@update')->name('user.password.update');
 });

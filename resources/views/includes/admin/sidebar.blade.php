@@ -26,6 +26,8 @@
                     <li class="{{ Request::is('admin/my-asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('myasset.index', Auth::user()->id) }}"><i class="fas fa-box"></i> <span>My Asset</span></a></li>
                     <li class="{{ Request::is('admin/my-license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('mylicense.index', Auth::user()->id) }}"><i class="fas fa-id-badge"></i> <span>My License</span></a></li>
                     <li class="{{ Request::is('admin/transfer*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('transfer.index') }}"><i class="fas fa-id-badge"></i> <span>Asset Transfer Request</span></a></li>
+                    <li class="menu-header">Download</li>
+                    <li class="{{ Request::is('admin/download-request') ? ' active' : '' }}"><a class="nav-link" href="{{ route('download.request') }}"><i class="fas fa-file-download"></i> <span>Download Form Request Assets</span></a></li>
                 @endif
             
                 
@@ -34,6 +36,7 @@
                     <li class="{{ Request::is('admin/asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('asset.index') }}"><i class="fas fa-boxes"></i> <span>Assets</span></a></li>
                     <li class="{{ Request::is('admin/license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('license.index') }}"><i class="fas fa-id-badge"></i> <span>Licenses</span></a></li>
                     <li class="{{ Request::is('admin/maintenance*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('maintenance.index') }}"><i class="fas fa-wrench"></i> <span>Maintenance</span></a></li>
+                    
                 @endif
 
                 <li class="menu-header">Settings</li>
