@@ -27,6 +27,7 @@
                 <li class="{{ Request::is('admin/my-license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('mylicense.index', Auth::user()->id) }}"><i class="fas fa-id-badge"></i> <span>My License</span></a></li>
                 <li class="{{ Request::is('admin/transfer*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('transfer.index') }}"><i class="fas fa-id-badge"></i> <span>Asset Transfer Request</span></a></li>
             @endif
+            <li class="{{ Request::is('admin/change-password') ? ' active' : '' }}"><a class="nav-link" href="{{ route('user.password.edit') }}"><i class="fas fa-key"></i> <span>Change Password</span></a></li>
         </ul>
     </aside>
 </div>

@@ -27,6 +27,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
         Route::get('/{id}/set-status', 'TransferController@setStatus')->name('transfer.status');
         Route::delete('/{transfer}', 'TransferController@destroy')->name('transfer.destroy');
     });
+
+    Route::get('/change-password', 'PasswordController@edit')->name('user.password.edit');
+    Route::patch('/change-password', 'PasswordController@update')->name('user.password.update');
 });
 
 Auth::routes(['register' => false]);
