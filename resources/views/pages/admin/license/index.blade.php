@@ -28,7 +28,7 @@
               <div class="card-header">
                   <h4>License Lists</h4>
               </div>
-              <div class="card-body p-0">
+              <div class="card-body">
                 <table class="table" id="myTable">
                     <thead>
                         <tr>

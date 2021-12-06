@@ -66,9 +66,9 @@
                         <label for="role">Role</label>
                         <select name="role" id="role" class="form-control">
                           <option disabled selected>-- Choose Role --</option>
-                          <option value="1">STAFF IT</option>
-                          <option value="2">STAFF - NON IT</option>
                           <option value="3">MANAJER IT</option>
+                          <option value="1">STAFF</option>
+                          <option value="2">NON - STAFF IT</option>
                         </select>
                       </div>
 
