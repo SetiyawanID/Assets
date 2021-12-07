@@ -152,7 +152,7 @@ class AssetController extends Controller
     {
         $start_date = $request->start_date;
         $end_date = $request->end_date;
-        $assets = asset::whereBetween('purchase_date', [$start_date, $end_date])->get();
+        $assets = Asset::whereBetween('purchase_date', [$start_date, $end_date])->get();
 
         $pdf = PDF::loadView('pages.admin.asset.print', [
             'assets' => $assets,

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Asset;
 use App\Maintenance;
 use App\Vendor;
+use PDF;
 use Illuminate\Http\Request;
 
 class MaintenanceController extends Controller
@@ -106,5 +107,20 @@ class MaintenanceController extends Controller
         $maintenance->delete();
 
         return redirect()->route('maintenance.index')->with('success', "Data successfully deleted!");
+    }
+
+    public function maintenancePrint(Request $request)
+    {
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+        $maintenances = Maintenance::whereBetween('created_at', [$start_date, $end_date])->get();
+
+        $pdf = PDF::loadView('pages.admin.maintenance.print', [
+            'maintenances' => $maintenances,
+            'start_date' => $start_date,
+            'end_date' => $end_date
+        ])->setPaper('a4', 'landscape');
+
+        return $pdf->download('recap_maintenances.pdf');
     }
 }
