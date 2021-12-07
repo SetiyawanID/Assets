@@ -13,6 +13,29 @@
 
           <a href="{{ route('license.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new license</a>
 
+          <div class="d-flex justify-content-center">
+            <form class="form-inline" method="POST" action="{{ route('license.print') }}">
+                @csrf
+                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                <div class="input-group mb-2 mr-sm-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Start Date</div>
+                  </div>
+                  <input type="date" class="form-control" id="start_date" name="start_date">
+                </div>
+
+                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                <div class="input-group mb-2 mr-sm-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">End Date</div>
+                  </div>
+                  <input type="date" class="form-control" id="end_date" name="end_date">
+                </div>
+              
+                <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-print"></i> Print</button>
+              </form>
+          </div>
+
           @if (Session::has('success'))
           <div class="alert alert-success alert-dismissible show fade">
             <div class="alert-body">

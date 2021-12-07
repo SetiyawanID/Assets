@@ -6,6 +6,7 @@ use App\Brand;
 use App\License;
 use App\User;
 use Illuminate\Http\Request;
+use PDF;
 
 class LicenseController extends Controller
 {
@@ -122,5 +123,20 @@ class LicenseController extends Controller
         $license->delete();
 
         return redirect()->route('license.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+    }
+
+    public function licensePrint(Request $request)
+    {
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+        $licenses = License::whereBetween('purchase_date', [$start_date, $end_date])->get();
+
+        $pdf = PDF::loadView('pages.admin.license.print', [
+            'licenses' => $licenses,
+            'start_date' => $start_date,
+            'end_date' => $end_date
+        ])->setPaper('a4', 'landscape');
+
+        return $pdf->download('recap_licenses.pdf');
     }
 }
