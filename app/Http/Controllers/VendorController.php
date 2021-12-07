@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\VendorRequest;
 use App\Vendor;
 use Illuminate\Http\Request;
+use PDF;
 
 class VendorController extends Controller
 {
@@ -83,5 +84,16 @@ class VendorController extends Controller
         $vendor->delete();
 
         return redirect()->route('vendor.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+    }
+
+    public function vendorPrint()
+    {
+        $vendors = Vendor::all();
+
+        $pdf = PDF::loadView('pages.admin.vendor.print', [
+            'vendors' => $vendors,
+        ])->setPaper('a4', 'landscape');
+
+        return $pdf->download('recap_vendors.pdf');
     }
 }
