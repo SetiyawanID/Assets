@@ -16,7 +16,7 @@
           <div class="d-flex justify-content-center">
             <form class="form-inline" method="POST" action="{{ route('license.print') }}">
                 @csrf
-                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                <label class="sr-only" for="start_date">Start Date</label>
                 <div class="input-group mb-2 mr-sm-2">
                   <div class="input-group-prepend">
                     <div class="input-group-text">Start Date</div>
@@ -24,7 +24,7 @@
                   <input type="date" class="form-control" id="start_date" name="start_date">
                 </div>
 
-                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                <label class="sr-only" for="end_date">End Date</label>
                 <div class="input-group mb-2 mr-sm-2">
                   <div class="input-group-prepend">
                     <div class="input-group-text">End Date</div>

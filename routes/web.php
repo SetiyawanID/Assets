@@ -31,6 +31,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     Route::get('/change-password', 'PasswordController@edit')->name('user.password.edit');
     Route::patch('/change-password', 'PasswordController@update')->name('user.password.update');
     Route::post('/license/print', 'LicenseController@licensePrint')->name('license.print');
+    Route::post('/asset/print', 'AssetController@assetPrint')->name('asset.print');
 });
 
 Auth::routes(['register' => false]);

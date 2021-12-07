@@ -7,6 +7,7 @@ use App\Brand;
 use App\Location;
 use App\Type;
 use App\User;
+use PDF;
 use Illuminate\Http\Request;
 
 class AssetController extends Controller
@@ -145,5 +146,20 @@ class AssetController extends Controller
         $asset->delete();
 
         return redirect()->route('asset.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+    }
+
+    public function assetPrint(Request $request)
+    {
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+        $assets = asset::whereBetween('purchase_date', [$start_date, $end_date])->get();
+
+        $pdf = PDF::loadView('pages.admin.asset.print', [
+            'assets' => $assets,
+            'start_date' => $start_date,
+            'end_date' => $end_date
+        ])->setPaper('a4', 'landscape');
+
+        return $pdf->download('recap_assets.pdf');
     }
 }
