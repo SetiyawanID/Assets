@@ -34,6 +34,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     Route::post('/asset/print', 'AssetController@assetPrint')->name('asset.print');
     Route::post('/maintenance/print', 'MaintenanceController@maintenancePrint')->name('maintenance.print');
     Route::get('/vendor/print', 'VendorController@vendorPrint')->name('vendor.print');
+    Route::view('/manager-print', 'pages.admin.report.index')->name('manager.print');
 });
 
 Auth::routes(['register' => false]);

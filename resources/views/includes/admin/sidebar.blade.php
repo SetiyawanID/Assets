@@ -36,7 +36,11 @@
                     <li class="{{ Request::is('admin/asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('asset.index') }}"><i class="fas fa-boxes"></i> <span>Assets</span></a></li>
                     <li class="{{ Request::is('admin/license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('license.index') }}"><i class="fas fa-id-badge"></i> <span>Licenses</span></a></li>
                     <li class="{{ Request::is('admin/maintenance*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('maintenance.index') }}"><i class="fas fa-wrench"></i> <span>Maintenance</span></a></li>
-                    
+                @endif
+
+                @if(Auth::user()->role == "3")
+                <li class="menu-header">Manager Menu</li>
+                <li class="{{ Request::is('admin/manager-print') ? ' active' : '' }}"><a class="nav-link" href="/admin/manager-print"><i class="fas fa-file-download"></i> <span>Generate Report</span></a></li>
                 @endif
 
                 <li class="menu-header">Settings</li>
