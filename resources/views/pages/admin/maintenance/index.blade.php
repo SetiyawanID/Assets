@@ -12,6 +12,8 @@
       <div class="col-12 col-md-12 col-lg-12">
 
           <a href="{{ route('maintenance.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new maintenance</a>
+          <a href="{{ route('maintenance.export_mapping') }}" class="btn btn-info mb-4"><i class="fas fa-print"></i> Export Excel</a>
+
 
           <div class="d-flex justify-content-center">
             <form class="form-inline" method="POST" action="{{ route('maintenance.print') }}">

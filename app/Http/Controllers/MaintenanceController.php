@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Asset;
+use App\Exports\MaintenanceExportMapping;
 use App\Maintenance;
 use App\Vendor;
 use PDF;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MaintenanceController extends Controller
 {
@@ -122,5 +124,10 @@ class MaintenanceController extends Controller
         ])->setPaper('a4', 'landscape');
 
         return $pdf->download('recap_maintenances.pdf');
+    }
+
+    public function export_mapping()
+    {
+        return Excel::download(new MaintenanceExportMapping, 'maintenance_mapping.xlsx');
     }
 }
