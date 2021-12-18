@@ -15,6 +15,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function(){
     Route::resource('user', UserController::class)->except('show');
     Route::resource('vendor', VendorController::class)->except('show');
     Route::get('asset/export_mapping', 'AssetController@export_mapping')->name('asset.export_mapping');
+    Route::get('license/export_mapping', 'LicenseController@export_mapping')->name('license.export_mapping');
     Route::resource('asset', AssetController::class);
     Route::resource('license', LicenseController::class);
     Route::resource('maintenance', MaintenanceController::class);

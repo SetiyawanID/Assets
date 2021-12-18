@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Exports\LicenseExportMapping;
 use App\License;
 use App\User;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use PDF;
 
 class LicenseController extends Controller
@@ -138,5 +140,10 @@ class LicenseController extends Controller
         ])->setPaper('a4', 'landscape');
 
         return $pdf->download('recap_licenses.pdf');
+    }
+
+    public function export_mapping()
+    {
+        return Excel::download(new LicenseExportMapping, 'license_mapping.xlsx');
     }
 }
