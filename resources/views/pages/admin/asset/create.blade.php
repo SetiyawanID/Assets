@@ -9,7 +9,7 @@
   </div>
   
   <div class="row">
-      <div class="col-12 col-md-6 col-lg-6">
+      <div class="col-10 col-md-10 col-lg-10">
 
           <a href="{{ route('asset.index') }}" class="btn btn-info mb-4"><i class="fas fa-chevron-circle-left"></i> Back</a>
 

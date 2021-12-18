@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Asset;
 use App\Brand;
+use App\Exports\AssetsExportMapping;
 use App\Location;
 use App\Type;
 use App\User;
 use PDF;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AssetController extends Controller
 {
@@ -127,8 +129,6 @@ class AssetController extends Controller
             'description' => 'required',
         ]);
 
-        $attr['asset_tag'] = "AD1" . \Str::random(5);
-
         $asset->update($attr);
 
         return redirect()->route('asset.index')->with('success', "Data <b>" . $asset->name . "</b> successfully updated!");
@@ -161,5 +161,10 @@ class AssetController extends Controller
         ])->setPaper('a4', 'landscape');
 
         return $pdf->download('recap_assets.pdf');
+    }
+
+    public function export_mapping()
+    {
+        return Excel::download(new AssetsExportMapping(), 'assets_mapping.xlsx');
     }
 }
