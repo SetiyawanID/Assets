@@ -49,9 +49,9 @@
                                 <td>{{ $user->department->name }}</td>
                                 <td>
                                     @if($user->role == "1")
-                                        <span class="badge badge-secondary">STAFF</span>
+                                        <span class="badge badge-secondary">ADMIN</span>
                                     @elseif ($user->role == "2")
-                                        <span class="badge badge-dark">NON - STAFF IT</span>
+                                        <span class="badge badge-dark">USER</span>
                                     @elseif ($user->role == "3")
                                         <span class="badge badge-danger">MANAJER IT</span>
                                     @endif
