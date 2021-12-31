@@ -11,7 +11,7 @@
   <div class="row">
       <div class="col-12 col-md-8 col-lg-8">
 
-          @if (!Auth::user()->role == "1")
+          @if (Auth::user()->role == "2" || Auth::user()->role == "3")
              <a href="{{ route('transfer.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new request</a>
           @endif
          
