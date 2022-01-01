@@ -150,6 +150,11 @@ class AssetController extends Controller
 
     public function assetPrint(Request $request)
     {
+        $request->validate([
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+
         $start_date = $request->start_date;
         $end_date = $request->end_date;
         $assets = Asset::whereBetween('purchase_date', [$start_date, $end_date])->get();

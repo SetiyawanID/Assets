@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Department;
 use App\User;
 use Illuminate\Http\Request;
+use PDF;
 
 class UserController extends Controller
 {
@@ -90,5 +91,16 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('user.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+    }
+
+    public function userPrint()
+    {
+        $users = User::all();
+
+        $pdf = PDF::loadView('pages.admin.user.print', [
+            'users' => $users,
+        ])->setPaper('a4', 'landscape');
+
+        return $pdf->download('recap_users.pdf');
     }
 }

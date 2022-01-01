@@ -12,6 +12,8 @@
       <div class="col-12 col-md-12 col-lg-12">
 
           <a href="{{ route('user.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new user</a>
+          <a href="{{ route('user.print') }}" class="btn btn-info mb-4"><i class="fas fa-print"></i> Print User</a>
+
 
           @if (Session::has('success'))
           <div class="alert alert-success alert-dismissible show fade">

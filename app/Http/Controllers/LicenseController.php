@@ -129,6 +129,11 @@ class LicenseController extends Controller
 
     public function licensePrint(Request $request)
     {
+        $request->validate([
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+
         $start_date = $request->start_date;
         $end_date = $request->end_date;
         $licenses = License::whereBetween('purchase_date', [$start_date, $end_date])->get();

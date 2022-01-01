@@ -22,7 +22,10 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Start Date</div>
                   </div>
-                  <input type="date" class="form-control" id="start_date" name="start_date">
+                  <input type="date" class="form-control @error('start_date') is-invalid @enderror" id="start_date" name="start_date">
+                  @error('start_date')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <label class="sr-only" for="end_date">End Date</label>
@@ -30,10 +33,13 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">End Date</div>
                   </div>
-                  <input type="date" class="form-control" id="end_date" name="end_date">
+                  <input type="date" class="form-control @error('end_date') is-invalid @enderror" id="end_date" name="end_date">
+                  @error('end_date')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                  @enderror
                 </div>
               
-                <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-print"></i> Print</button>
+                <button type="submit" class="btn btn-primary mb-2 print"><i class="fas fa-print"></i> Print</button>
               </form>
           </div>
 
@@ -114,7 +120,7 @@
     
     <script>
          $(document).ready( function () {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable();            
         });
     </script>
 @endpush

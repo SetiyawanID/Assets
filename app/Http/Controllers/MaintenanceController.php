@@ -113,6 +113,11 @@ class MaintenanceController extends Controller
 
     public function maintenancePrint(Request $request)
     {
+        $request->validate([
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+        
         $start_date = $request->start_date;
         $end_date = $request->end_date;
         $maintenances = Maintenance::whereBetween('created_at', [$start_date, $end_date])->get();
