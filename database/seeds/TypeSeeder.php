@@ -13,8 +13,8 @@ class TypeSeeder extends Seeder
     public function run()
     {
         Type::create([
-            'name' => 'Router',
-            'description' => 'Perangkat jaringan yang digunakan untuk menyambungkan 2 jaringan atau lebih'
+            'name' => 'Laptop',
+            'description' => 'Laptop untuk Staff'
         ]);
     }
 }

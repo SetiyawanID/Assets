@@ -24,8 +24,8 @@ class BrandRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:5|max:25',
-            'description' => 'required|min:5'
+            'name' => 'required|max:50',
+            'description' => 'nullable'
         ];
     }
 }

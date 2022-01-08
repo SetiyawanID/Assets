@@ -19,7 +19,7 @@ class CreateMaintenancesTable extends Migration
             $table->unsignedBigInteger('vendor_id');
             $table->string('problem');
             $table->integer('status');
-            $table->text('description');
+            $table->text('description')->nullable();;
             $table->timestamps();
             
             $table->foreign('asset_id')->references('id')->on('assets')->onDelete('cascade');

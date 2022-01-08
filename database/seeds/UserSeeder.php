@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
             'email' => 'kangari.id@gmail.com',
             'email_verified_at' => now(),
             'role' => 1,
+            'job_title' => 'IT Support',
             'password' => bcrypt('ari12345'),
         ]);
     }

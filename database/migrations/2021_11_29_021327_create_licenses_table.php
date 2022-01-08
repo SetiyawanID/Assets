@@ -20,7 +20,7 @@ class CreateLicensesTable extends Migration
             $table->string('license_number', 36);
             $table->unsignedBigInteger('user_id');
             $table->date('purchase_date');
-            $table->text('description');
+            $table->text('description')->nullable();;
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
