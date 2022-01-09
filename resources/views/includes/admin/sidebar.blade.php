@@ -36,7 +36,7 @@
                     <li class="menu-header">Main-Menu</li>
                     <li class="{{ Request::is('admin/asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('asset.index') }}"><i class="fas fa-boxes"></i> <span>Assets</span></a></li>
                     <li class="{{ Request::is('admin/license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('license.index') }}"><i class="fas fa-id-badge"></i> <span>Licenses</span></a></li>
-                    <li class="{{ Request::is('admin/maintenance*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('maintenance.index') }}"><i class="fas fa-wrench"></i> <span>Maintenances</span></a></li>
+                    <li class="{{ Request::is('admin/maintenance*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('maintenance.index') }}"><i class="fas fa-wrench"></i> <span>Assets on Maintenance</span></a></li>
                     <li class="{{ Request::is('admin/transfer*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('transfer.index') }}"><i class="fas fa-id-badge"></i> <span>Asset Transfer Requests</span></a></li>
                 @endif
 

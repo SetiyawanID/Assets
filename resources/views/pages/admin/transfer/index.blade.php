@@ -12,7 +12,7 @@
       <div class="col-12 col-md-10 col-lg-10">
 
           @if (Auth::user()->role == "2" || Auth::user()->role == "3")
-             <a href="{{ route('transfer.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new request</a>
+             <a href="{{ route('transfer.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create New Request</a>
           @endif
          
 

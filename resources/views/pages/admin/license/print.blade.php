@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>License - Recap</title>
+	<title>Licenses - Recap</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 		<img src="https://i.postimg.cc/mZXMFpb7/kop.png" alt="kop_surat">
 		<center>
-			<h4>License Recap</h4>
+			<h4>Licenses Recap</h4>
 		</center>
 		<br/>
 		<p><b>Periode</b> : {{ \Carbon\Carbon::parse($start_date)->isoFormat('D MMMM Y') }} - {{ \Carbon\Carbon::parse($end_date)->isoFormat('D MMMM Y') }}</p>

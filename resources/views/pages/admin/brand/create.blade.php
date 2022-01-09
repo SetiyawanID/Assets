@@ -5,7 +5,7 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Create New Brands</h1>
+    <h1>Add New Brand</h1>
   </div>
   
   <div class="row">

@@ -11,7 +11,7 @@
   <div class="row">
       <div class="col-12 col-md-12 col-lg-12">
 
-          <a href="{{ route('vendor.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new vendor</a>
+          <a href="{{ route('vendor.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Add New Vendor</a>
           <a href="{{ route('vendor.print') }}" class="btn btn-info mb-4"><i class="fas fa-print"></i> Print Vendor</a>
 
           @if (Session::has('success'))

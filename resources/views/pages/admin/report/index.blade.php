@@ -5,11 +5,11 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Manager Report Print</h1>
+    <h1>Manager Reports Print</h1>
   </div>
   <div class="section-body">
       <h2 class="section-title">
-          Manager Report Print
+          Manager Reports Print
       </h2>
       <p class="section-lead">
           This page for generate all reports from various resource
@@ -17,7 +17,7 @@
       <div class="row">
           <div class="col-md-4">
               <div class="card">
-                  <div class="card-header"><h4>Asset Report (By Purchase Date)</h4></div>
+                  <div class="card-header"><h4>Assets Report (By Purchase Date)</h4></div>
                   <div class="card-body">
                     <form action="{{ route('asset.print') }}" method="POST" id="form_asset" name="form_asset">
                         @csrf
@@ -36,7 +36,7 @@
           </div>
           <div class="col-md-4">
               <div class="card">
-                  <div class="card-header"><h4>License Report (By Purchase Date)</h4></div>
+                  <div class="card-header"><h4>Licenses Report (By Purchase Date)</h4></div>
                   <div class="card-body">
                     <form action="{{ route('license.print') }}" method="POST" name="form_license">
                         @csrf
@@ -55,7 +55,7 @@
           </div>
           <div class="col-md-4">
             <div class="card">
-                <div class="card-header"><h4>Maintenance Report (By Created Date)</h4></div>
+                <div class="card-header"><h4>Assets on Maintenance Report (By Created Date)</h4></div>
                 <div class="card-body">
                   <form action="{{ route('maintenance.print') }}" method="POST"  name="form_maintenance">
                       @csrf
@@ -77,7 +77,7 @@
           <div class="col-md-4">
               <div class="card">
                   <div class="card-header">
-                      <h4>Vendor Report</h4>
+                      <h4>Vendors Report</h4>
                   </div>
                   <div class="card-body">
                       <a href="{{ route('vendor.print') }}" class="btn btn-primary btn-lg"><i class="fas fa-print"></i> Generate Report</a>

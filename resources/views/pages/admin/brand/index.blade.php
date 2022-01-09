@@ -11,7 +11,7 @@
   <div class="row">
       <div class="col-12 col-md-8 col-lg-8">
 
-          <a href="{{ route('brand.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new brand</a>
+          <a href="{{ route('brand.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Add New Brand</a>
 
           @if (Session::has('success'))
           <div class="alert alert-success alert-dismissible show fade">

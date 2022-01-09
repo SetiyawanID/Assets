@@ -11,7 +11,7 @@
   <div class="row">
       <div class="col-12 col-md-8 col-lg-8">
 
-          <a href="{{ route('license.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new license</a>
+          <a href="{{ route('license.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Add New License</a>
           <a href="{{ route('license.export_mapping') }}" class="btn btn-info mb-4"><i class="fas fa-print"></i> Export Excel</a>
 
 

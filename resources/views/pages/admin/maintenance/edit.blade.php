@@ -5,7 +5,7 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Edit Maintenance - {{ $maintenance->asset->asset_tag }}</h1>
+    <h1>Edit Asset on Maintenance - {{ $maintenance->asset->asset_tag }}</h1>
   </div>
   
   <div class="row">
@@ -15,7 +15,7 @@
 
           <div class="card">
               <div class="card-header">
-                  <h4>Form Edit maintenance</h4>
+                  <h4>Form Edit Asset on Maintenance</h4>
               </div>
               <div class="card-body">
                   <form action="{{ route('maintenance.update', $maintenance) }}" method="POST">

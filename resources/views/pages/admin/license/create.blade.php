@@ -5,7 +5,7 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Create New License</h1>
+    <h1>Add New License</h1>
   </div>
   
   <div class="row">

@@ -5,7 +5,7 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Edit Assets</h1>
+    <h1>Edit Asset</h1>
   </div>
   
   <div class="row">

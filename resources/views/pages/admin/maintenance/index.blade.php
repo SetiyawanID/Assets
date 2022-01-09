@@ -5,13 +5,13 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Maintenances</h1>
+    <h1>Assets on Maintenance</h1>
   </div>
   
   <div class="row">
       <div class="col-12 col-md-12 col-lg-12">
 
-          <a href="{{ route('maintenance.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new maintenance</a>
+          <a href="{{ route('maintenance.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Add New Asset on Maintenance</a>
           <a href="{{ route('maintenance.export_mapping') }}" class="btn btn-info mb-4"><i class="fas fa-print"></i> Export Excel</a>
 
 

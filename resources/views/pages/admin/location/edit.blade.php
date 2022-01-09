@@ -5,7 +5,7 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Edit Locations</h1>
+    <h1>Edit Location</h1>
   </div>
   
   <div class="row">

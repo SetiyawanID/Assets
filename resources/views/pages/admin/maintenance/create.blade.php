@@ -5,7 +5,7 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Create New Maintenance</h1>
+    <h1>Add New Asset Maintenance</h1>
   </div>
   
   <div class="row">
@@ -15,7 +15,7 @@
 
           <div class="card">
               <div class="card-header">
-                  <h4>Form New maintenance</h4>
+                  <h4>Form New Asset on Maintenance</h4>
               </div>
               <div class="card-body">
                   <form action="{{ route('maintenance.store') }}" method="POST">

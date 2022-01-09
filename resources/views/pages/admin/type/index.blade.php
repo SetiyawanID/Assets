@@ -11,7 +11,7 @@
   <div class="row">
       <div class="col-10 col-md-10 col-lg-10">
 
-          <a href="{{ route('type.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create new asset types</a>
+          <a href="{{ route('type.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create New Asset Types</a>
 
           @if (Session::has('success'))
           <div class="alert alert-success alert-dismissible show fade">
