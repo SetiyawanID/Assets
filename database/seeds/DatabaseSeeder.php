@@ -1,5 +1,6 @@
 <?php
 
+use App\Department;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
             LocationSeeder::class,
             TypeSeeder::class,
             BrandSeeder::class,
+            DepartmentSeeder::class
         ]);
     }
 }
