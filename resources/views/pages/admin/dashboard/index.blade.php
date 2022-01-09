@@ -17,7 +17,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Total Employee</h4>
+            <h4>Total Employees</h4>
           </div>
           <div class="card-body">
             {{ $employee }}
@@ -32,7 +32,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Maintenance</h4>
+            <h4>Assets on Maintenance</h4>
           </div>
           <div class="card-body">
             {{ $maintenance }}
@@ -47,7 +47,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>License</h4>
+            <h4>Licenses</h4>
           </div>
           <div class="card-body">
             {{ $license }}
@@ -62,7 +62,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Assets</h4>
+            <h4>Total Assets</h4>
           </div>
           <div class="card-body">
           {{ $asset }}
@@ -80,7 +80,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>My Asset</h4>
+            <h4>My Assets</h4>
           </div>
           <div class="card-body">
             {{ $myAsset }}
@@ -95,7 +95,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>My License</h4>
+            <h4>My Licenses</h4>
           </div>
           <div class="card-body">
             {{ $myLicense }}
@@ -110,7 +110,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>My Asset on Maintenance</h4>
+            <h4>My Assets on Maintenance</h4>
           </div>
           <div class="card-body">
             {{ $myMaintenance }}
