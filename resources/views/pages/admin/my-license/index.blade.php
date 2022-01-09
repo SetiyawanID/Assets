@@ -13,7 +13,7 @@
 
           <div class="card">
               <div class="card-header">
-                  <h4>My License Lists</h4>
+                  <h4>My Licenses</h4>
               </div>
               <div class="card-body p-0">
                 <table class="table" id="myTable">

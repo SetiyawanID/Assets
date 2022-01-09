@@ -13,7 +13,7 @@
 
           <div class="card">
               <div class="card-header">
-                  <h4>My Asset</h4>
+                  <h4>My Assets</h4>
               </div>
               <div class="card-body">
                 <table class="table" id="myTable">

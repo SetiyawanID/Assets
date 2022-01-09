@@ -16,7 +16,7 @@
                 <li class="{{ Request::is('admin/department*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('department.index') }}"><i class="fas fa-briefcase"></i> <span>Departments</span></a></li>
                 <li class="{{ Request::is('admin/location*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('location.index') }}"><i class="fas fa-location-arrow"></i> <span>Locations</span></a></li>
                 <li class="{{ Request::is('admin/brand*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('brand.index') }}"><i class="fas fa-copyright"></i> <span>Brands</span></a></li>
-                <li class="{{ Request::is('admin/type*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('type.index') }}"><i class="fas fa-bolt"></i> <span>Type Assets</span></a></li>
+                <li class="{{ Request::is('admin/type*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('type.index') }}"><i class="fas fa-bolt"></i> <span>Asset Types</span></a></li>
                 <li class="{{ Request::is('admin/user*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i> <span>Users</span></a></li>
                 <li class="{{ Request::is('admin/vendor*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('vendor.index') }}"><i class="fas fa-address-card"></i> <span>Vendors</span></a></li>
                 @endif
