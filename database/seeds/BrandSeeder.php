@@ -13,8 +13,20 @@ class BrandSeeder extends Seeder
     public function run()
     {
         Brand::create([
-            'name' => 'Samsung',
-            'description' => 'Brand eletronik asal korea'
+            'name' => 'Lenovo',
+            'description' => 'Terbatas pada tipe Thinkpad'
+        ]);
+        Brand::create([
+            'name' => 'Asus',
+            'description' => 'Terbatas pada tipe ROG (Developer)'
+        ]);
+        Brand::create([
+            'name' => 'HP',
+            'description' => 'Terbatas pada tipe Envy dan Spectre'
+        ]);
+        Brand::create([
+            'name' => 'Acer',
+            'description' => 'Terbatas pada tipe Nitro (Developer)'
         ]);
     }
 }
