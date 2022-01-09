@@ -7,7 +7,7 @@
     <ul class="navbar-nav navbar-right">
         <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
         <img alt="image" src="{{ asset('backend/assets/img/avatar/avatar-custom.jpg') }}" class="rounded-circle mr-1">
-        <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
+        <div class="d-sm-none d-lg-inline-block">Welcome, {{ Auth::user()->name }}</div></a>
         <div class="dropdown-menu dropdown-menu-right">
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout

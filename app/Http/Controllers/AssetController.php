@@ -67,7 +67,7 @@ class AssetController extends Controller
             'description' => 'required',
         ]);
 
-        $attr['asset_tag'] = "AD1" . strtoupper(\Str::random(5));
+        $attr['asset_tag'] = "TTN/ASSETS/" . strtoupper(\Str::random(5));
 
         $asset = Asset::create($attr);
 
