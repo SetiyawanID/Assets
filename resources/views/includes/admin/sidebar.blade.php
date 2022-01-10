@@ -22,7 +22,7 @@
                 @endif
 
                 @if (Auth::user()->role != "1")
-                    <li class="menu-header">Dashboard</li>
+                    <li class="menu-header">Home</li>
                     <li class="{{ Request::is('admin') ? ' active' : '' }}"><a class="nav-link" href="{{ route('dashboard.index') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
                     <li class="{{ Request::is('admin/my-asset*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('myasset.index', Auth::user()->id) }}"><i class="fas fa-box"></i> <span>My Assets</span></a></li>
                     <li class="{{ Request::is('admin/my-license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('mylicense.index', Auth::user()->id) }}"><i class="fas fa-check-circle"></i> <span>My Licenses</span></a></li>
