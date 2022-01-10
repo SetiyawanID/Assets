@@ -11,8 +11,12 @@
   <div class="row">
       <div class="col-8 col-md-8 col-lg-8">
 
-        <a href="{{ route('asset.index') }}" class="btn btn-info mb-4"><i class="fas fa-chevron-circle-left"></i> Back</a>
-    
+
+        @if (Auth::user()->role == "1")
+            <a href="{{ route('asset.index') }}" class="btn btn-info mb-4"><i class="fas fa-chevron-circle-left"></i> Back</a>
+          @endif
+
+
           <div class="card shadow-sm">
               <div class="card-body">
                   <table class="table">
