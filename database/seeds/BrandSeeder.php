@@ -28,5 +28,13 @@ class BrandSeeder extends Seeder
             'name' => 'Acer',
             'description' => 'Terbatas pada tipe Nitro (Developer)'
         ]);
+        Brand::create([
+            'name' => 'MSI',
+            'description' => 'Terbatas pada tipe GL dan Modern'
+        ]);
+        Brand::create([
+            'name' => 'Apple',
+            'description' => 'Terbatas pada tipe Macbook'
+        ]);
     }
 }
