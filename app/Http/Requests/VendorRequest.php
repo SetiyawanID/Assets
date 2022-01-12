@@ -24,7 +24,7 @@ class VendorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:50|string',
+            'name' => 'required|max:100|string',
             'address' => 'required',
             'email' => 'required|string|email',
             'phone_number' => 'required|numeric'
