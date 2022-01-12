@@ -58,7 +58,7 @@ class LicenseController extends Controller
 
         $license = License::create($attr);
 
-        return redirect()->route('license.index')->with('success', "Data <b>" . $license->name . "</b> successfully added!");
+        return redirect()->route('license.index')->with('success', "License : <b>" . $license->name . "</b> successfully added!");
     }
 
     /**
@@ -110,7 +110,7 @@ class LicenseController extends Controller
 
         $license->update($attr);
 
-        return redirect()->route('license.index')->with('success', "Data <b>" . $license->name . "</b> successfully added!");
+        return redirect()->route('license.index')->with('success', "License : <b>" . $license->name . "</b> successfully added!");
     }
 
     /**
@@ -124,7 +124,7 @@ class LicenseController extends Controller
         $old_name = $license->name;
         $license->delete();
 
-        return redirect()->route('license.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+        return redirect()->route('license.index')->with('success', "License : <b>" . $old_name . "</b> successfully deleted");
     }
 
     public function licensePrint(Request $request)

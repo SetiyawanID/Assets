@@ -42,7 +42,7 @@ class VendorController extends Controller
 
         $vendor = Vendor::create($attr);
 
-        return redirect()->route('vendor.index')->with('success', "Data <b>" . $vendor->name . "</b> successfully added!");
+        return redirect()->route('vendor.index')->with('success', "Vendor : <b>" . $vendor->name . "</b> successfully added!");
     }
 
     /**
@@ -69,7 +69,7 @@ class VendorController extends Controller
 
         $vendor->update($attr);
 
-        return redirect()->route('vendor.index')->with('success', "Data <b>" . $vendor->name . "</b> successfully updated!");
+        return redirect()->route('vendor.index')->with('success', "Vendor : <b>" . $vendor->name . "</b> successfully updated!");
     }
 
     /**
@@ -83,7 +83,7 @@ class VendorController extends Controller
         $old_name = $vendor->name;
         $vendor->delete();
 
-        return redirect()->route('vendor.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+        return redirect()->route('vendor.index')->with('success', "Vendor : <b>" . $old_name . "</b> successfully deleted");
     }
 
     public function vendorPrint()

@@ -41,7 +41,7 @@ class TypeController extends Controller
 
         $type = Type::create($attr);
 
-        return redirect()->route('type.index')->with('success', "Data <b>" . $type->name . "</b> successfully added!");
+        return redirect()->route('type.index')->with('success', "Asset Type : <b>" . $type->name . "</b> successfully added!");
     }
 
     /**
@@ -68,7 +68,7 @@ class TypeController extends Controller
 
         $type->update($attr);
 
-        return redirect()->route('type.index')->with('success', "Data <b>" . $type->name . "</b> successfully updated!");
+        return redirect()->route('type.index')->with('success', "Asset Type : <b>" . $type->name . "</b> successfully updated!");
     }
 
     /**
@@ -82,6 +82,6 @@ class TypeController extends Controller
         $old_name = $type->name;
         $type->delete();
 
-        return redirect()->route('type.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+        return redirect()->route('type.index')->with('success', "Asset Type : <b>" . $old_name . "</b> successfully deleted");
     }
 }

@@ -53,7 +53,7 @@ class UserController extends Controller
 
         $user = User::create($attr);
 
-        return redirect()->route('user.index')->with('success', "Data <b>" . $user->name . "</b> successfully added!");
+        return redirect()->route('user.index')->with('success', "User <b>" . $user->name . "</b> successfully added!");
     }
 
     /**

@@ -41,7 +41,7 @@ class DepartmentController extends Controller
 
         $department = Department::create($attr);
 
-        return redirect()->route('department.index')->with('success', "Data <b>" . $department->name . "</b> successfully added!");
+        return redirect()->route('department.index')->with('success', "Department : <b>" . $department->name . "</b> successfully added!");
     }
 
     /**
@@ -68,7 +68,7 @@ class DepartmentController extends Controller
 
         $department->update($attr);
 
-        return redirect()->route('department.index')->with('success', "Data <b>" . $department->name . "</b> successfully updated!");
+        return redirect()->route('department.index')->with('success', "Department : <b>" . $department->name . "</b> successfully updated!");
     }
 
     /**
@@ -82,7 +82,7 @@ class DepartmentController extends Controller
         $old_name = $department->name;
         $department->delete();
 
-        return redirect()->route('department.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+        return redirect()->route('department.index')->with('success', "Department : <b>" . $old_name . "</b> successfully deleted");
 
     }
 }

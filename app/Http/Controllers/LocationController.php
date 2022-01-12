@@ -41,7 +41,7 @@ class LocationController extends Controller
 
         $location = Location::create($attr);
 
-        return redirect()->route('location.index')->with('success', "Data <b>" . $location->name . "</b> successfully added!");
+        return redirect()->route('location.index')->with('success', "Location : <b>" . $location->name . "</b> successfully added!");
     }
 
     /**
@@ -68,7 +68,7 @@ class LocationController extends Controller
 
         $location->update($attr);
 
-        return redirect()->route('location.index')->with('success', "Data <b>" . $location->name . "</b> successfully updated!");
+        return redirect()->route('location.index')->with('success', "Location : <b>" . $location->name . "</b> successfully updated!");
     }
 
     /**
@@ -82,6 +82,6 @@ class LocationController extends Controller
         $old_name = $location->name;
         $location->delete();
 
-        return redirect()->route('location.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+        return redirect()->route('location.index')->with('success', "Location : <b>" . $old_name . "</b> successfully deleted");
     }
 }
