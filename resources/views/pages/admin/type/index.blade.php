@@ -9,7 +9,7 @@
   </div>
   
   <div class="row">
-      <div class="col-10 col-md-10 col-lg-10">
+      <div class="col-10 col-md-8 col-lg-8">
 
           <a href="{{ route('type.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Create New Asset Types</a>
 
