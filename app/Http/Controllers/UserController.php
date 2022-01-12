@@ -90,7 +90,7 @@ class UserController extends Controller
         $old_name = $user->name;
         $user->delete();
 
-        return redirect()->route('user.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+        return redirect()->route('user.index')->with('success', "User <b>" . $old_name . "</b> successfully deleted");
     }
 
     public function userPrint()

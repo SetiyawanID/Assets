@@ -37,7 +37,7 @@
                             <th>No.</th>
                             <th>Name</th>
                             <th>Job Title</th>
-                            <th>Department Name</th>
+                            <th>Department</th>
                             <th>Role</th>
                             <th>Action</th>
                         </tr>
@@ -63,7 +63,7 @@
                                     <form action="{{ route('user.destroy', $user) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure wanna delete {{ $user->name }} ?')">Delete</button>
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure wanna delete {{ $user->name }} ? Be careful, it will also delete their assets data. Please transfer their assets before perform this action')">Delete</button>
                                     </form>
                                 </td>
                             </tr>

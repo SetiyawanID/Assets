@@ -59,7 +59,7 @@ class AssetController extends Controller
             'user_id' => 'required',
             'brand_id' => 'required',
             'location_id' => 'required',
-            'serial_number' => 'required',
+            'serial_number' => 'required|unique:assets',
             'type_id' => 'required',
             'cost' => 'required',
             'purchase_date' => 'required',
