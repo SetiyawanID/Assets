@@ -19,7 +19,7 @@
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No.</th>
                             <th>Name</th>
                             <th>Brand</th>
                             <th>License ID</th>

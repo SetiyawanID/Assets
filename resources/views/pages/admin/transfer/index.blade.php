@@ -35,7 +35,7 @@
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No.</th>
                             <th>Asset Name</th>
                             <th>User Destination</th>
                             <th>Reason</th>

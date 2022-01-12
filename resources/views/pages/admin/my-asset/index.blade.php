@@ -19,7 +19,7 @@
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No.</th>
                             <th>QR Code</th>
                             <th>Asset Tag</th>
                             <th>Name</th>

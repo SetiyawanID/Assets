@@ -34,7 +34,7 @@
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No.</th>
                             <th>Name</th>
                             <th>Job Title</th>
                             <th>Department Name</th>
