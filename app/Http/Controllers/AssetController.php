@@ -71,7 +71,7 @@ class AssetController extends Controller
 
         $asset = Asset::create($attr);
 
-        return redirect()->route('asset.index')->with('success', "Data <b>" . $asset->name . "</b> successfully added!");
+        return redirect()->route('asset.index')->with('success', "Asset : <b>" . $asset->name . "</b> successfully added!");
     }
 
     /**
@@ -131,7 +131,7 @@ class AssetController extends Controller
 
         $asset->update($attr);
 
-        return redirect()->route('asset.index')->with('success', "Data <b>" . $asset->name . "</b> successfully updated!");
+        return redirect()->route('asset.index')->with('success', "Asset : <b>" . $asset->name . "</b> successfully updated!");
     }
 
     /**
@@ -145,7 +145,7 @@ class AssetController extends Controller
         $old_name = $asset->name;
         $asset->delete();
 
-        return redirect()->route('asset.index')->with('success', "Data <b>" . $old_name . "</b> successfully deleted");
+        return redirect()->route('asset.index')->with('success', "Asset : <b>" . $old_name . "</b> successfully deleted");
     }
 
     public function assetPrint(Request $request)

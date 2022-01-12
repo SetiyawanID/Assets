@@ -51,7 +51,7 @@ class LicenseController extends Controller
             'name' => 'required|min:5|max:50',
             'user_id' => 'required',
             'brand_id' => 'required',
-            'license_number' => 'required|min:16|max:36',
+            'license_number' => 'required|min:16|max:36|unique:licenses',
             'purchase_date' => 'required',
             'description' => 'required',
         ]);
