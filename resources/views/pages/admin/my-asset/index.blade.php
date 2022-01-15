@@ -20,28 +20,26 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>QR Code</th>
                             <th>Asset Tag</th>
                             <th>Name</th>
                             <th>Type</th>
                             <th>Brand</th>
                             <th>Location</th>
+                            <th>Purchase Date</th>
+                            <th>Warranty Void</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($assets as $asset)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>
-                                    <div class="visible-print text-center img-thumbnail">
-                                        {!! QrCode::size(75)->generate(route('asset.show', $asset)); !!}
-                                    </div>
-                                </td>
                                 <td>{{ $asset->asset_tag }}</td>
                                 <td>{{ $asset->name }}</td>
                                 <td>{{ $asset->typeAsset->name }}</td>
                                 <td>{{ $asset->brand->name }}</td>
                                 <td>{{ $asset->location->name }}</td>
+                                <td>{{ $asset->purchase_date }}</td>
+                                <td>{{ $asset->warranty }}</td>
                             </tr>
                         @empty
                             
