@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function(){
-    Route::get('/', 'DashboardController@__invoke')->name('dashboard.index');
+    Route::get('/', 'DashboardController@__invoke')->name('dashboard.index')->middleware('auth');
     Route::resource('department', DepartmentController::class)->except('show')->middleware('admin');
     Route::resource('location',LocationController::class)->except('show')->middleware('admin');
     Route::resource('brand', BrandController::class)->except('show')->middleware('admin');
