@@ -53,8 +53,7 @@
         </div>
         
         <div class="simple-footer">
-          Copyright &copy; 2021
-        </div>
+          Design By Ari Setiyawan (Crafted for PT Thamrin Telekomunikasi Network)      
       </div>
     </div>
   </div>
