@@ -77,7 +77,8 @@
       <div class="col-4 col-md-4 col-lg-4 mt-5">
         <div class="card p-4 shadow-sm mt-2">
             <div class="visible-print text-center">
-                {!! QrCode::size(200)->generate(Request::url()); !!}
+                <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->merge('https://i.ibb.co/Hg13fmM/thamrin-logo.png', .1, true)->size(200)->generate(Request::url())) }}"/>
+                {{-- {!! QrCode::size(200)->generate(Request::url()); !!} --}} 
                 <h5 class="mt-4">{{ $asset->name }}</h3>
             </div>
         </div>
