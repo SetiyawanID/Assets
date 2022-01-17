@@ -105,7 +105,7 @@
     </div>
     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
       <div class="card card-statistic-1">
-        <div class="card-icon bg-warning">
+        <div class="card-icon bg-warning" onclick="location.href='{{ route('mymaintenance.index', auth()->user()->id) }}';" style="cursor: pointer;">
           <i class="fas fa-wrench"></i>
         </div>
         <div class="card-wrap">

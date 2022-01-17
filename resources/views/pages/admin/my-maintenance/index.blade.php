@@ -30,14 +30,13 @@
                     <tbody>
                         @forelse ($maintenances as $maintenance)
 
-                        @dd($maintenance);
+                        {{-- @dd($maintenance); --}}
 
-                            {{-- <tr>
+                            <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $maintenance->asset_tag }}</td>
-                                <td>{{ $maintenance->name }}</td> --}}
-
-                                {{-- <td>{{ $maintenance->vendor->name }}</td>
+                                <td>{{ $maintenance->asset->asset_tag }}</td>
+                                <td>{{ $maintenance->asset->name }}</td>
+                                <td>{{ $maintenance->vendor->name }}</td>
                                 <td>{{ $maintenance->problem }}</td>
                                 <td>
                                     @if($maintenance->status == "1")
@@ -47,7 +46,7 @@
                                     @elseif ($maintenance->status == "3")
                                         <span class="badge badge-success">Done</span>
                                 @endif
-                                </td> --}}
+                                </td>
 
                             </tr>
                         @empty
