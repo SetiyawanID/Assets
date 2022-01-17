@@ -20,8 +20,9 @@ Route::prefix('admin')->group(function(){
     Route::resource('asset', AssetController::class)->middleware('admin');
     Route::resource('license', LicenseController::class)->middleware('admin');
     Route::resource('maintenance', MaintenanceController::class)->middleware('admin');
-    Route::get('my-asset/{id}', 'MyAssetController@__invoke')->name('myasset.index');
-    Route::get('my-license/{id}', 'MyLicenseController@__invoke')->name('mylicense.index');
+    Route::get('my-asset/{id}', 'MyAssetController@__invoke')->name('myasset.index')->middleware('auth');
+    Route::get('my-license/{id}', 'MyLicenseController@__invoke')->name('mylicense.index')->middleware('auth');
+    Route::get('my-maintenance/{id}', 'MyMaintenanceController@__invoke')->name('mymaintenance.index')->middleware('auth');
     
     Route::prefix('transfer')->group(function(){
         Route::get('/', 'TransferController@index')->name('transfer.index')->middleware('auth');

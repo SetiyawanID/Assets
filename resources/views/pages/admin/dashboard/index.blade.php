@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
       <div class="card card-statistic-1">
-        <div class="card-icon bg-primary">
+        <div class="card-icon bg-primary" onclick="location.href='{{ 'admin/user' }}';" style="cursor: pointer;">
           <i class="far fa-user"></i>
         </div>
         <div class="card-wrap">
@@ -27,7 +27,7 @@
     </div>
     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
       <div class="card card-statistic-1">
-        <div class="card-icon bg-danger">
+        <div class="card-icon bg-danger" onclick="location.href='{{ 'admin/maintenance' }}';" style="cursor: pointer;">
           <i class="fas fa-wrench"></i>
         </div>
         <div class="card-wrap">
@@ -42,7 +42,7 @@
     </div>
     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
       <div class="card card-statistic-1">
-        <div class="card-icon bg-warning">
+        <div class="card-icon bg-warning" onclick="location.href='{{ 'admin/license' }}';" style="cursor: pointer;">
           <i class="fas fa-id-badge"></i>
         </div>
         <div class="card-wrap">
@@ -57,7 +57,7 @@
     </div>
     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
       <div class="card card-statistic-1">
-        <div class="card-icon bg-success">
+        <div class="card-icon bg-success" onclick="location.href='{{ 'admin/asset' }}';" style="cursor: pointer;">
           <i class="fas fa-boxes"></i>
         </div>
         <div class="card-wrap">
@@ -75,7 +75,7 @@
   <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
       <div class="card card-statistic-1">
-        <div class="card-icon bg-success">
+        <div class="card-icon bg-success" onclick="location.href='{{ route('myasset.index', auth()->user()->id) }}';" style="cursor: pointer;">
           <i class="fas fa-boxes"></i>
         </div>
         <div class="card-wrap">
@@ -90,7 +90,7 @@
     </div>
     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
       <div class="card card-statistic-1">
-        <div class="card-icon bg-warning">
+        <div class="card-icon bg-warning" onclick="location.href='{{ route('mylicense.index', auth()->user()->id) }}';" style="cursor: pointer;">
           <i class="fas fa-id-badge"></i>
         </div>
         <div class="card-wrap">
