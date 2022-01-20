@@ -78,7 +78,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>
                                     <div class="visible-print text-center img-thumbnail">
-                                        {!! QrCode::size(75)->generate(route('asset.show', $asset)); !!}
+                                      <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->merge('https://i.ibb.co/Hg13fmM/thamrin-logo.png', .2, true)->size(75)->generate(route('asset.show', $asset))) }}"/>
+                                        {{-- {!! QrCode::size(75)->generate(route('asset.show', $asset)); !!} --}}
                                     </div>
                                 </td>
                                 <td>{{ $asset->asset_tag }}</td>
