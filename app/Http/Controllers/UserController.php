@@ -64,7 +64,11 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+
+        return view('pages.admin.user.edit', [
+            'departments' => Department::get(),
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -76,7 +80,17 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $attr = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'department_id' => 'required',
+            'job_title' => 'required',
+            'role' => 'required'
+        ]);
+
+        $user->update($attr);
+
+        return redirect()->route('user.index')->with('success', "User : <b>" . $user->name . "</b> successfully updated!");
     }
 
     /**

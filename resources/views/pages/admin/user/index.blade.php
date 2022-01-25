@@ -61,7 +61,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {{-- <a href="{{ route('user.edit', $user) }}" class="btn btn-warning btn-sm">Edit</a> --}}
+                                    <a href="{{ route('user.edit', $user) }}" class="btn btn-warning btn-sm">Edit</a>
                                     <form action="{{ route('user.destroy', $user) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
