@@ -37,6 +37,10 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                       Send Reset Password Link
                     </button>
+
+                    <a href="{{ route('login') }}" class="btn btn-info btn-lg btn-block" tabindex="4"><i class="fas fa-chevron-circle-left"></i> Back to Login
+                    </a>
+
                   </div>
                 </form>
               </div>
