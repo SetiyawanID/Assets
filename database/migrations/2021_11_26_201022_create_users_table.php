@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('role')->default(2);
-            $table->string('job_title', 25);
+            $table->string('job_title', 50);
             $table->unsignedBigInteger('department_id')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -36,5 +36,25 @@ class BrandSeeder extends Seeder
             'name' => 'Apple',
             'description' => 'Terbatas pada tipe Macbook'
         ]);
+        Brand::create([
+            'name' => 'Logitech',
+            'description' => 'Terbatas pada Mouse dan Keyboard'
+        ]);
+        Brand::create([
+            'name' => 'Huawei',
+            'description' => 'Terbatas pada network peripheral'
+        ]);
+        Brand::create([
+            'name' => 'Ruckus',
+            'description' => 'Terbatas pada network peripheral'
+        ]);
+        Brand::create([
+            'name' => 'Cisco',
+            'description' => 'Terbatas pada network peripheral'
+        ]);
+        Brand::create([
+            'name' => 'Yealink',
+            'description' => 'Terbatas pada IP Phone'
+        ]);
     }
 }
