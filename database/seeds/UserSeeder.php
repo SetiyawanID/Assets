@@ -13,12 +13,22 @@ class UserSeeder extends Seeder
     public function run()
     {
         //IT Infrastructure
+        //0
+        User::create([
+            'name' => 'IT Support Internal',
+            'email' => 'itsupportthamrin@gmail.com',
+            'email_verified_at' => now(),
+            'role' => 1,
+            'department_id' => 6,
+            'job_title' => 'IT Support',
+            'password' => bcrypt('12345678')
+        ]);
         //1
         User::create([
             'name' => 'Ahmad Ari Setiyawan',
             'email' => 'kangari.id@gmail.com',
             'email_verified_at' => now(),
-            'role' => 1,
+            'role' => 2,
             'department_id' => 6,
             'job_title' => 'IT Support',
             'password' => bcrypt('ari12345')
@@ -36,7 +46,7 @@ class UserSeeder extends Seeder
         //3
         User::create([
             'name' => 'Anggi Muhammad Saputra',
-            'email' => 'masanggputra@gmail.com',
+            'email' => 'masanggiputra@gmail.com',
             'email_verified_at' => now(),
             'role' => 1,
             'department_id' => 6,
@@ -48,7 +58,7 @@ class UserSeeder extends Seeder
             'name' => 'Mahesa Dongoran',
             'email' => 'mahesa@gmail.com',
             'email_verified_at' => now(),
-            'role' => 1,
+            'role' => 2,
             'department_id' => 6,
             'job_title' => 'IT Support',
             'password' => bcrypt('mahesa12345')
@@ -58,7 +68,7 @@ class UserSeeder extends Seeder
             'name' => 'Saiful Saragih',
             'email' => 'saifulsaragih1@gmail.com',
             'email_verified_at' => now(),
-            'role' => 1,
+            'role' => 2,
             'department_id' => 6,
             'job_title' => 'IT Support',
             'password' => bcrypt('saiful12345')
@@ -68,7 +78,7 @@ class UserSeeder extends Seeder
             'name' => 'Galar Gunarto',
             'email' => 'galar26@gmail.com',
             'email_verified_at' => now(),
-            'role' => 1,
+            'role' => 2,
             'department_id' => 6,
             'job_title' => 'IT Support',
             'password' => bcrypt('galar12345')
