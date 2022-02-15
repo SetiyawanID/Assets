@@ -67,8 +67,9 @@
                             <th>Asset Tag</th>
                             <th>Name</th>
                             <th>Type</th>
-                            <th>Brand</th>
+                            {{-- <th>Brand</th> --}}
                             <th>Owner</th>
+                            <th>Warranty</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -85,8 +86,9 @@
                                 <td>{{ $asset->asset_tag }}</td>
                                 <td>{{ $asset->name }}</td>
                                 <td>{{ $asset->typeAsset->name }}</td>
-                                <td>{{ $asset->brand->name }}</td>
+                                {{-- <td>{{ $asset->brand->name }}</td> --}}
                                 <td>{{ $asset->user->name }}</td>
+                                <td>{{ $asset->warranty }}</td>
                                 <td>
                                     <a href="{{ route('asset.edit', $asset) }}" class="btn btn-warning btn-sm">Edit</a>
                                     <a href="{{ route('asset.show', $asset) }}" class="btn btn-info btn-sm">Detail</a>

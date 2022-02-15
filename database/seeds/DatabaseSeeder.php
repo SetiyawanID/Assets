@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             TypeSeeder::class,
             BrandSeeder::class,
             VendorSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            AssetSeeder::class
         ]);
     }
 }
