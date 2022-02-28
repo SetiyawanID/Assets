@@ -28,8 +28,8 @@
                     <li class="{{ Request::is('admin/my-license*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('mylicense.index', Auth::user()->id) }}"><i class="fas fa-check-circle"></i> <span>My Licenses</span></a></li>
                     <li class="{{ Request::is('admin/my-maintenance*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('mymaintenance.index', Auth::user()->id) }}"><i class="fas fa-wrench"></i> <span>Asset on Maintenance</span></a></li>
                     <li class="{{ Request::is('admin/transfer*') ? ' active' : '' }}"><a class="nav-link" href="{{ route('transfer.index') }}"><i class="fas fa-id-badge"></i> <span>Asset Transfer Requests</span></a></li>
-                    <li class="menu-header">Download</li>
-                    <li class="{{ Request::is('admin/download-request') ? ' active' : '' }}"><a class="nav-link" href="{{ route('download.request') }}"><i class="fas fa-file-download"></i> <span>Download Form Request Assets</span></a></li>
+                    {{-- <li class="menu-header">Download</li> --}}
+                    {{-- <li class="{{ Request::is('admin/download-request') ? ' active' : '' }}"><a class="nav-link" href="{{ route('download.request') }}"><i class="fas fa-file-download"></i> <span>Download Form Request Assets</span></a></li> --}}
                 @endif
             
                 
@@ -44,6 +44,11 @@
                 @if(Auth::user()->role == "3")
                 <li class="menu-header">Manager Menu</li>
                 <li class="{{ Request::is('admin/manager-print') ? ' active' : '' }}"><a class="nav-link" href="/admin/manager-print"><i class="fas fa-file-download"></i> <span>Generate Reports</span></a></li>
+                @endif
+
+                @if (Auth::user())
+                    <li class="menu-header">Download</li>
+                    <li class="{{ Request::is('admin/download-request') ? ' active' : '' }}"><a class="nav-link" href="{{ route('download.request') }}"><i class="fas fa-file-download"></i> <span>Download Form Request Assets</span></a></li>
                 @endif
 
                 <li class="menu-header">Settings</li>
