@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             BrandSeeder::class,
             VendorSeeder::class,
             UserSeeder::class,
-            AssetSeeder::class
+            AssetSeeder::class,
+            LicenseSeeder::class
         ]);
     }
 }

@@ -56,5 +56,13 @@ class BrandSeeder extends Seeder
             'name' => 'Yealink',
             'description' => 'Terbatas pada IP Phone'
         ]);
+        Brand::create([
+            'name' => 'Microsoft',
+            'description' => 'Terbatas pada License Windows dan aplikasinya'
+        ]);
+        Brand::create([
+            'name' => 'Adobe',
+            'description' => 'Terbatas pada License aplikasi Adobe Acrobat'
+        ]);
     }
 }

@@ -9,7 +9,7 @@
   </div>
   
   <div class="row">
-      <div class="col-12 col-md-8 col-lg-8">
+      <div class="col-12 col-md-12 col-lg-12">
 
           <a href="{{ route('license.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Add New License</a>
           <a href="{{ route('license.export_mapping') }}" class="btn btn-info mb-4"><i class="fas fa-print"></i> Export Excel</a>
@@ -68,7 +68,8 @@
                             <th>Brand</th>
                             <th>License ID</th>
                             <th>Owner</th>
-                            <th>Action</th>
+                            <th>Description</th>
+                            <th width="15%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,6 +80,7 @@
                                 <td>{{ $license->brand->name }}</td>
                                 <td>{{ $license->license_number }}</td>
                                 <td>{{ $license->user->name }}</td>
+                                <td>{{ $license->description }}</td>
                                 <td>
                                     <a href="{{ route('license.edit', $license) }}" class="btn btn-warning btn-sm">Edit</a>
                                     <form action="{{ route('license.destroy', $license) }}" method="POST" class="d-inline">

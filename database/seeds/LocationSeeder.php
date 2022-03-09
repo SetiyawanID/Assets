@@ -48,11 +48,6 @@ class LocationSeeder extends Seeder
         ]);
 
         Location::create([
-            'name' => 'Ruang HR',
-            'description' => 'Thamrin Telekomunikasi Network HQ Lt.1'
-        ]);
-
-        Location::create([
             'name' => 'Ruang Business dan System Analyst',
             'description' => 'Thamrin Telekomunikasi Network HQ Lt.1'
         ]);

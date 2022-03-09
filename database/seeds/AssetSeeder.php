@@ -109,5 +109,48 @@ class AssetSeeder extends Seeder
             'warranty' => '2022-09-17',
             'description' => 'Laptop aset Kiandra (Finance Leader)',
         ]);
+
+        Asset::create([
+            'name' => 'ThinkPad E4760',
+            'asset_tag' => 'TTN/ASSETS/2016/IT/CHVLI',
+            'user_id' => 29,
+            'brand_id' => 1,
+            'location_id' => 7,
+            'serial_number' => 'PF0J3X36',
+            'type_id' => 1,
+            'cost' => '15226364',
+            'purchase_date' => '2016-07-15',
+            'warranty' => '2017-07-14',
+            'description' => 'Laptop aset Amelia Rahimah',
+        ]);
+
+        Asset::create([
+            'name' => 'Lenovo IP320-14IKBN',
+            'asset_tag' => 'TTN/ASSETS/2017/IT/XFPCF',
+            'user_id' => 23,
+            'brand_id' => 1,
+            'location_id' => 6,
+            'serial_number' => 'PF0U6BHL',
+            'type_id' => 1,
+            'cost' => '9271819',
+            'purchase_date' => '2017-10-30',
+            'warranty' => '2018-10-29',
+            'description' => 'Laptop aset Artanto Mustofa',
+        ]);
+
+        Asset::create([
+            'name' => 'ThinkPad E470',
+            'asset_tag' => 'TTN/ASSETS/2017/IT/BOKAJ',
+            'user_id' => 27,
+            'brand_id' => 1,
+            'location_id' => 9,
+            'serial_number' => 'PF0TVSZD',
+            'type_id' => 1,
+            'cost' => '15304545',
+            'purchase_date' => '2017-08-18',
+            'warranty' => '2018-08-17',
+            'description' => 'Laptop aset Balapati Marbun',
+        ]);
+
     }
 }

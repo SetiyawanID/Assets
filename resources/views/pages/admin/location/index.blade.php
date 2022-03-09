@@ -9,7 +9,7 @@
   </div>
   
   <div class="row">
-      <div class="col-12 col-md-8 col-lg-8">
+      <div class="col-12 col-md-9 col-lg-9">
 
           <a href="{{ route('location.create') }}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Add New Location</a>
 
@@ -35,7 +35,7 @@
                             <th>No.</th>
                             <th>Name</th>
                             <th>Description</th>
-                            <th>Action</th>
+                            <th width="15%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
